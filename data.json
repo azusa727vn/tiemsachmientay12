@@ -1,0 +1,163 @@
+{
+  "books": [
+    {
+      "id": "tam-ly-hoc-ve-tien",
+      "title": "Tâm Lý Học Về Tiền",
+      "author": "Morgan Housel",
+      "category_id": "Tài Chính - Kỹ Năng",
+      "price": 152000,
+      "stock": 24,
+      "image_url": "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?auto=format&fit=crop&q=80&w=600",
+      "detail_page": "tamlyhocvetien.html"
+    },
+    {
+      "id": "book-1792332872862",
+      "title": "Jojo's Bizzare Adventure - 1",
+      "author": "Hirohiko Araki",
+      "category_id": "Manga",
+      "price": 100000,
+      "stock": 366,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeHH3MHJNJV6OHK7Oig2GRhjNQ-XcrxyeJEklMZtx33A&s=10",
+      "detail_page": "tamlyhocvetien.html",
+      "description": ""
+    },
+    {
+      "id": "book-1792378155724",
+      "title": "Áng Phù Du Mùa Hạ - 3",
+      "author": "Yuama",
+      "category_id": "Yuri",
+      "price": 65000,
+      "stock": 65,
+      "image_url": "https://cdn.hstatic.net/products/200000287623/ang_phu_du_mua_ha_3_-_bia_1_1f992dc59cf844e8b5c231d99357ee82_large.jpg",
+      "description": "Shizuku đã quyết tâm đối diện với Kaori. Cảm nhận được lời nói chân thành của Kaori, Shizuku mở lòng mình và quyết định tiếp tục chơi trò đóng giả người yêu. \n\n \nThế nhưng, trái ngược với Shizuku đã trút bỏ hiềm nghi và tìm lại được niềm vui, Kaori dường như lại đang khổ sở vì điều gì đó...",
+      "detail_page": "book-detail.html"
+    },
+    {
+      "id": "book-1792396700795",
+      "title": "Như Tôi Đã Viết",
+      "author": "PhiLia093",
+      "category_id": "Phiêu Lưu",
+      "price": 93000,
+      "stock": 33550337,
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNa8huNo3DOmbSe6x_kUns93OOQZC3Q1bQh9poB-XoqQ&s=10",
+      "description": "Amphoreus",
+      "detail_page": "bookdetail.html"
+    }
+  ],
+  "users": [
+    {
+      "id": "admin-default",
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "number": "0123456789",
+      "password": "123admin",
+      "role": "admin",
+      "createdAt": "Hệ thống",
+      "sessionToken": "TOKEN-1792466076580-2thbzwjswdm"
+    },
+    {
+      "id": "user-1792333131469",
+      "username": "Phainon",
+      "email": "iloveaedeselysiae@gmail.com",
+      "number": "033550336",
+      "password": "Gugugaga",
+      "role": "customer",
+      "createdAt": "18/10/2026"
+    },
+    {
+      "id": "user-1792377880192",
+      "username": "skibidi",
+      "email": "sv@gmail.com",
+      "number": "727",
+      "password": "phungthanhdo",
+      "role": "customer",
+      "createdAt": "19/10/2026"
+    },
+    {
+      "id": "user-1792391632965",
+      "username": "Lycugus-8",
+      "email": "zandar8@gmail.com",
+      "number": "1234567890",
+      "password": "irontomb",
+      "role": "admin",
+      "createdAt": "19/10/2026"
+    },
+    {
+      "id": "user-1792425154673",
+      "username": "Độ Mixi",
+      "email": "mixigaming@gmail.com",
+      "number": "0363636367",
+      "password": "khogadetem",
+      "role": "customer",
+      "createdAt": "19/10/2026"
+    },
+    {
+      "id": "user-1792432425125",
+      "username": "TungSahur",
+      "email": "trippleT@gmail.com",
+      "number": "0676767367",
+      "password": "tungtungtung",
+      "role": "customer",
+      "createdAt": "2026-10-20",
+      "sessionToken": "TOKEN-1792433010484-j7i8f9hmj7",
+      "cart": []
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-1792390328346",
+      "username": "Phainon",
+      "items": [
+        {
+          "id": "book-1792378155724",
+          "title": "Áng Phù Du Mùa Hạ - 3",
+          "price": 65000,
+          "image_url": "https://cdn.hstatic.net/products/200000287623/ang_phu_du_mua_ha_3_-_bia_1_1f992dc59cf844e8b5c231d99357ee82_large.jpg",
+          "quantity": 2
+        },
+        {
+          "id": "book-1792332872862",
+          "title": "Jojo's Bizzare Adventure - 1",
+          "price": 100000,
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGy5uzLtbxwDh9kqJjmHysjobttpebL4wpyepg4o6BZAPkc_-gGAr9Q0I&s=10",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 230000,
+      "status": "Đã duyệt",
+      "createdAt": "13:12:08 19/10/2026"
+    },
+    {
+      "id": "ORD-1792390798767",
+      "username": "Phainon",
+      "items": [
+        {
+          "id": "tam-ly-hoc-ve-tien",
+          "title": "Tâm Lý Học Về Tiền",
+          "price": 152000,
+          "image_url": "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?auto=format&fit=crop&q=80&w=600",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 152000,
+      "status": "Đã duyệt",
+      "createdAt": "13:19:58 19/10/2026"
+    },
+    {
+      "id": "ORD-1792433035867",
+      "username": "TungSahur",
+      "items": [
+        {
+          "id": "book-1792396700795",
+          "title": "Như Tôi Đã Viết",
+          "price": 93000,
+          "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNa8huNo3DOmbSe6x_kUns93OOQZC3Q1bQh9poB-XoqQ&s=10",
+          "quantity": 4
+        }
+      ],
+      "totalAmount": 372000,
+      "status": "Đã hủy",
+      "createdAt": "2026-10-20 1:03:55"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tiệm Sách Miền Tây</title>
+        <link rel="stylesheet" href="TiemSachDangnhapDangky.css">
+        <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1sx8oszR-vh9d-vMKzRAsGea_wxTzJqT2gxveT9yV3w&s=10" type="image/x-icon">
+    </head>
+    <body>
+
+        <div class="the-xoay">
+            <div class="truc-xoay" id="TrucXoay">
+
+        <div id="login-form" class="vao-trang dang-nhap">
+            <h1>TIỆM SÁCH MIỀN TÂY</h1>
+            <p class="subtitle">Mời quý khách đăng nhập</p>
+            <form id="formLogin" class="thong-bao">
+                <div class="input">
+                    <input type="text" id="login-username" placeholder="Tên tài khoản" required> 
+                </div>
+                <div class="input" style="position: relative;">
+                    <input type="password" id="login-password" required placeholder="Nhập mật khẩu...">
+                    <span id="togglePassword" style="position: absolute;right: 16px;top:13px; cursor: pointer; user-select: none;" title="Hiện/Ẩn mật khẩu">👁️</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; margin: 12px 0;">
+                    <input type="checkbox" id="rememberMe" style="cursor: pointer;">
+                    <label for="rememberMe" style="font-size: 13px; cursor: pointer; color: white;">Nhớ mật khẩu</label>
+                </div>
+                <button class="submit" type="submit">Đăng nhập</button>
+            </form>
+            <div class="chu-nut-xoay">Chưa có tài khoản? 
+                <button type="button" class="nut-xoay" onclick="flipCard()">Đăng ký</button>
+            </div>
+        </div>
+
+
+        <div id="register-form" class="vao-trang dang-ky">
+            <h1>TIỆM SÁCH MIỀN TÂY</h1>
+            <p class="subtitle">Đăng ký tài khoản mới</p>
+            <form class="thong-bao" id="formRegister">
+                <div class="input">
+                    <input type="text" id="reg-fullname" required placeholder="Nhập tên tài khoản...">
+                </div>
+                <div class="input">
+                    <input type="email" id="reg-username" required placeholder="Nhập Email...">
+                </div>
+                <div class="input">
+                    <input type="number" id="reg-number" required placeholder="Nhập STĐ...">
+                </div>
+                <div class="input">
+                    <input type="password" id="reg-password" required placeholder="Đặt mật khẩu...">
+                </div>
+                <button type="submit" class="submit">Đăng ký</button>
+            </form>
+            <div class="chu-nut-xoay">Bạn đã có tài khoản? 
+                <button type="button" class="nut-xoay" onclick="flipCard()">Đăng nhập</button>
+            </div>
+        </div>
+
+            </div>
+        </div>
+        <script src="TiemSachDangnhapDangky.js"></script>
+    </body>
+</html>

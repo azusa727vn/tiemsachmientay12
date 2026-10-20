@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Trị Hệ Thống - Tiệm Sách Miền Tây</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1sx8oszR-vh9d-vMKzRAsGea_wxTzJqT2gxveT9yV3w&s=10" type="image/x-icon">
+</head>
+<body>
+
+  <header>
+    <div class="logo">📖 Quản Trị Hệ Thống <span>Tiệm Sách Miền Tây</span></div>
+    
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <span id="adminWelcomeName" style="font-size: 14px; font-weight: 600; color: var(--text-muted);"></span>
+      <button class="logout-btn" onclick="handleLogout()">Đăng xuất</button>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <div class="tab-navigation">
+      <button class="tab-btn active" onclick="switchTab('books-tab', this)">📚 Quản Lý Đầu Sách</button>
+      <button class="tab-btn" onclick="switchTab('orders-tab', this)">🛒 Quản Lý Đơn Hàng</button>
+      <button class="tab-btn" onclick="switchTab('users-tab', this)">👤 Quản Lý Tài Khoản</button>
+    </div>
+
+    <!-- TAB 1: QUẢN LÝ SÁCH -->
+    <div id="books-tab" class="tab-content active">
+      <div class="admin-card">
+        <h2>Thêm Tựa Sách Mới</h2>
+        <form id="addBookForm">
+          <div class="form-grid">
+            <div class="input-group">
+              <label>Tên sách</label>
+              <input type="text" id="bookTitle" required placeholder="Nhập tên sách...">
+            </div>
+            <div class="input-group">
+              <label>Tác giả</label>
+              <input type="text" id="bookAuthor" required placeholder="Nhập tên tác giả...">
+            </div>
+            <div class="input-group">
+              <label>Thể loại</label>
+              <input type="text" id="bookCategory" required placeholder="Ví dụ: Tài Chính - Kỹ Năng">
+            </div>
+            <div class="input-group">
+              <label>Giá bán (VNĐ)</label>
+              <input type="number" id="bookPrice" required placeholder="Ví dụ: 150000">
+            </div>
+            <div class="input-group">
+              <label>Số lượng tồn kho</label>
+              <input type="number" id="bookStock" min="0" required placeholder="Ví dụ: 25">
+            </div>
+            <div class="input-group">
+              <label>Link ảnh bìa (URL)</label>
+              <input type="url" id="bookImage" required placeholder="https://...">
+            </div>
+            <div class="input-group" style="grid-column: 1 / -1;">
+              <label>Mô tả / Giới thiệu sách</label>
+              <textarea id="bookDescription" rows="3" placeholder="Nhập tóm tắt nội dung, giới thiệu tác phẩm..." style="padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; outline: none; font-family: inherit;"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit">Thêm Sách Vào Hệ Thống</button>
+        </form>
+      </div>
+
+      <div class="admin-card">
+        <h2>Danh Sách Sách Hiện Tại</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Ảnh</th>
+              <th>Tên sách</th>
+              <th>Tác giả</th>
+              <th>Thể loại</th>
+              <th>Giá</th>
+              <th>Tồn kho</th>
+              <th>Trạng thái</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="adminBookList"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 2: QUẢN LÝ ĐƠN HÀNG -->
+    <div id="orders-tab" class="tab-content">
+      <div class="admin-card">
+        <h2>Danh Sách Đơn Hàng Từ Khách Hàng</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Mã Đơn</th>
+              <th>Khách Hàng</th>
+              <th>Sản Phẩm Mua</th>
+              <th>Tổng Tiền</th>
+              <th>Thời Gian</th>
+              <th>Trạng Thái</th>
+              <th>Thao Tác</th>
+            </tr>
+          </thead>
+          <tbody id="adminOrderList"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 3: QUẢN LÝ TÀI KHOẢN -->
+    <div id="users-tab" class="tab-content">
+      <div class="admin-card">
+        <h2>Danh Sách Tài Khoản Người Dùng</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Tên tài khoản</th>
+              <th>Email</th>
+              <th>Số điện thoại</th>
+              <th>Số sách đã mua</th>
+              <th>Tổng tiền đã chi</th>
+              <th>Vai trò</th>
+              <th>Ngày đăng ký</th>
+              <th>Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="adminUserList"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modal Chỉnh Sửa Sách -->
+  <div class="modal" id="editModal">
+    <div class="modal-content">
+      <h2>Chỉnh Sửa Thông Tin Sách</h2>
+      <form id="editBookForm">
+        <input type="hidden" id="editBookId">
+        <div class="form-grid">
+          <div class="input-group">
+            <label>Tên sách</label>
+            <input type="text" id="editBookTitle" required>
+          </div>
+          <div class="input-group">
+            <label>Tác giả</label>
+            <input type="text" id="editBookAuthor" required>
+          </div>
+          <div class="input-group">
+            <label>Thể loại</label>
+            <input type="text" id="editBookCategory" required>
+          </div>
+          <div class="input-group">
+            <label>Giá bán (VNĐ)</label>
+            <input type="number" id="editBookPrice" required>
+          </div>
+          <div class="input-group">
+            <label>Số lượng tồn kho</label>
+            <input type="number" id="editBookStock" min="0" required>
+          </div>
+          <div class="input-group">
+            <label>Link ảnh bìa (URL)</label>
+            <input type="url" id="editBookImage" required>
+          </div>
+          <div class="input-group" style="grid-column: 1 / -1;">
+            <label>Mô tả / Giới thiệu sách</label>
+            <textarea id="editBookDescription" rows="3" style="padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; outline: none; font-family: inherit;"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit">Cập Nhật Thông Tin</button>
+        <button type="button" class="btn-cancel" onclick="closeEditModal()">Hủy</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Sửa Tài Khoản (Dành cho Admin) -->
+  <div class="modal" id="adminEditUserModal">
+    <div class="modal-content">
+      <h2>Chỉnh Sửa Tài Khoản Người Dùng</h2>
+      <form id="adminEditUserForm">
+        <input type="hidden" id="editOriginalUsername">
+        <div class="form-grid">
+          <div class="input-group">
+            <label>Tên tài khoản</label>
+            <input type="text" id="adminEditUsername" required>
+          </div>
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="adminEditEmail" required>
+          </div>
+          <div class="input-group">
+            <label>Số điện thoại</label>
+            <input type="text" id="adminEditNumber" required>
+          </div>
+          <div class="input-group">
+            <label>Vai trò</label>
+            <select id="adminEditRole">
+              <option value="customer">Khách hàng</option>
+              <option value="admin">Quản trị viên</option>
+            </select>
+          </div>
+          <div class="input-group" style="grid-column: 1 / -1;">
+            <label>Mật khẩu mới (để trống nếu giữ nguyên)</label>
+            <input type="password" id="adminEditPassword" placeholder="Nhập mật khẩu mới...">
+          </div>
+        </div>
+        <button type="submit" class="btn-submit">Lưu Thay Đổi</button>
+        <button type="button" class="btn-cancel" onclick="closeAdminEditUserModal()">Hủy</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

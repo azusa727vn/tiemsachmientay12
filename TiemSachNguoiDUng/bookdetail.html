@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Chi Tiết Sách - Tiệm Sách Miền Tây</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bookdetail.css">
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1sx8oszR-vh9d-vMKzRAsGea_wxTzJqT2gxveT9yV3w&s=10" type="image/x-icon">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="homepage.html" class="logo">
+        📖 Tiệm Sách<span>Miền Tây</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="homepage.html">Trang chủ</a></li>
+        <li><a href="homepage.html#features">Đặc quyền</a></li>
+        <li><a href="homepage.html#books">Tủ sách</a></li>
+        <li><a href="#footer">Liên hệ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- BREADCRUMB -->
+    <nav class="breadcrumb">
+      <a href="homepage.html">Trang chủ</a> / <span id="breadcrumbCategory">Loại</span> / <span id="breadcrumbTitle">Tên sách</span>
+    </nav>
+
+    <!-- CHI TIẾT SẢN PHẨM -->
+    <section class="product-detail-container">
+      <!-- Cột Ảnh -->
+      <div class="product-media">
+        <div class="main-image-wrapper">
+          <img id="bookImage" src="" alt="Ảnh bìa sách" class="main-image">
+        </div>
+      </div>
+
+      <!-- Cột Thông tin -->
+      <div class="product-summary">
+        <span class="book-tag" id="bookCategory">Thể loại</span>
+        <h1 class="product-title" id="bookTitle">Tên sách đang tải...</h1>
+
+        <div class="meta-row">
+          <span>Tác giả: <strong id="bookAuthor">...</strong></span>
+          <span>Tình trạng: <strong id="bookStatus">...</strong></span>
+          <span>Tồn kho: <strong id="bookStock">0</strong> cuốn</span>
+        </div>
+
+        <div class="price-box">
+          <span class="current-price" id="bookPrice">0 đ</span>
+        </div>
+
+        <!-- Bộ chọn số lượng & Nút thêm giỏ hàng -->
+        <div class="action-row">
+          <div class="quantity-picker">
+            <button class="qty-btn" onclick="updateQty(-1)">-</button>
+            <input type="text" id="quantityInput" class="qty-input" value="1" readonly>
+            <button class="qty-btn" onclick="updateQty(1)">+</button>
+          </div>
+
+          <button class="btn btn-primary" onclick="handleAddToCart()">
+            Thêm vào giỏ hàng
+          </button>
+        </div>
+
+        <!-- Ưu đãi -->
+        <div class="quick-benefits">
+          <div class="benefit-item">🚚 Giao nhanh toàn quốc</div>
+          <div class="benefit-item">🛡️ Sách chính hãng 100%</div>
+          <div class="benefit-item">🔄 Đổi trả 7 ngày miễn phí</div>
+          <div class="benefit-item">💬 Hỗ trợ tư vấn 24/7</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GIỚI THIỆU CHI TIẾT -->
+    <section class="details-section">
+      <h2 class="section-title">Giới Thiệu Sách</h2>
+      <div class="description-content" id="bookDescription">
+        <p>Đang tải mô tả chi tiết của sách...</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container footer-content">
+      <p>© 2026 Tiệm Sách Miền Tây. Giữ trọn tình yêu với từng trang sách.</p>
+    </div>
+  </footer>
+
+  <div id="simpleToast"></div>
+
+  <!-- JAVASCRIPT XỬ LÝ TÁCH RỜI -->
+  <script src="bookdetail.js"></script>
+</body>
+</html>

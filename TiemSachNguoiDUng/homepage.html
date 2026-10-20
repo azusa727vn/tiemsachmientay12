@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiệm Sách Miền Tây - Khám Phá Tri Thức</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="homepage.css">
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1sx8oszR-vh9d-vMKzRAsGea_wxTzJqT2gxveT9yV3w&s=10" type="image/x-icon">
+</head>
+<body>
+
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">
+        📖 Tiệm Sách<span>Miền Tây</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero">Trang chủ</a></li>
+        <li><a href="#features">Đặc quyền</a></li>
+        <li><a href="#books">Tủ sách</a></li>
+        <li><a href="#footer">Liên hệ</a></li>
+      </ul>
+
+      <div class="nav-action" id="navActionArea">
+        <!-- Ô tìm kiếm sách -->
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <input type="text" id="searchInput" placeholder="Tìm tên sách, tác giả, thể loại..." style="padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px; outline: none; width: 240px;">
+        </div>
+        <button class="btn btn-secondary" onclick="openCartModal()" style="padding: 8px 12px; font-size: 12px; position: relative;">
+          🛒 Giỏ hàng (<span id="cartCount">0</span>)
+        </button>
+        <!-- Khu vực hiển thị tên tài khoản & Nút Đăng xuất (Do JavaScript tự động thêm vào đây) -->
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="container hero-content">
+      <span class="badge">Nền Tảng Đọc Sách Hiện Đại</span>
+      <h1>Khám phá tri thức mới mỗi ngày cùng Tiệm Sách Miền Tây.</h1>
+      <p>Nơi hội tụ những tựa sách hay nhất, giá tốt nhất cho mọi độc giả.</p>
+      
+      <div class="hero-cta">
+        <a href="#books" class="btn btn-primary">Khám phá ngay</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚚</div>
+          <h3>Giao hàng nhanh toàn quốc</h3>
+          <p>Đóng gói cẩn thận 2 lớp, chuyển phát nhanh chóng đến mọi miền đất nước.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Sách chính hãng 100%</h3>
+          <p>Hợp tác bản quyền từ các nhà xuất bản hàng đầu, nói không với sách lậu.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>Đổi trả dễ dàng trong 7 ngày</h3>
+          <p>Hỗ trợ 1-đổi-1 miễn phí và nhanh chóng</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Hỗ trợ khách hàng 24/7</h3>
+          <p>Đội ngũ yêu sách luôn túc trực tư vấn tựa sách phù hợp nhu cầu của bạn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. DANH SÁCH SÁCH MẪU ĐƠN GIẢN -->
+  <section class="books-section" id="books">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2>Danh mục sản phẩm</h2>
+          <p>Tuyển chọn những cuốn sách nên đọc của shop</p>
+        </div>
+      </div>
+      <div id="books-grid" class="books-grid"></div>
+    </div>
+  </section>
+
+  <script src="homepage.js"></script>
+
+  <footer id="footer">
+    <div class="container footer-content">
+      <p>© 2026 Tiệm Sách Miền Tây. Giữ trọn tình yêu với từng trang sách.</p>
+      <div class="footer-links">
+        <a href="#hero">Về chúng tôi</a>
+        <a href="#features">Chính sách 7 ngày</a>
+        <a href="#footer">Liên hệ hỗ trợ</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="simpleToast"></div>
+
+<!-- Modal Chỉnh sửa thông tin cá nhân cho khách hàng -->
+  <div class="modal" id="userProfileModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: var(--surface); padding: 28px; border-radius: var(--radius); width: 90%; max-width: 500px; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+      <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--primary);">Chỉnh Sửa Tài Khoản Của Tôi</h2>
+      <form id="userProfileForm">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <label style="font-size: 13px; font-weight: 600; color: var(--text-muted);">Tên tài khoản</label>
+            <input type="text" id="profileUsername" required style="width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; outline: none;">
+          </div>
+          <div>
+            <label style="font-size: 13px; font-weight: 600; color: var(--text-muted);">Email</label>
+            <input type="email" id="profileEmail" required style="width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; outline: none;">
+          </div>
+          <div>
+            <label style="font-size: 13px; font-weight: 600; color: var(--text-muted);">Số điện thoại</label>
+            <input type="text" id="profileNumber" required style="width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; outline: none;">
+          </div>
+          <div>
+            <label style="font-size: 13px; font-weight: 600; color: var(--text-muted);">Mật khẩu mới (để trống nếu không đổi)</label>
+            <input type="password" id="profilePassword" placeholder="Nhập mật khẩu mới..." style="width: 100%; padding: 10px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; outline: none;">
+          </div>
+        </div>
+        <div style="margin-top: 20px; display: flex; gap: 10px;">
+          <button type="submit" class="btn btn-primary" style="flex: 1; height: 40px;">Lưu Thay Đổi</button>
+          <button type="button" class="btn btn-secondary" onclick="closeProfileModal()" style="height: 40px;">Hủy</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Giỏ Hàng -->
+<div class="modal" id="cartModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+  <div style="background: var(--surface); padding: 28px; border-radius: var(--radius); width: 90%; max-width: 650px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); max-height: 80vh; display: flex; flex-direction: column;">
+    <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 16px; color: var(--primary);">🛒 Giỏ Hàng Của Bạn</h2>
+    
+    <div id="cartItemsList" style="flex: 1; overflow-y: auto; margin-bottom: 20px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 10px 0;">
+      <!-- Danh sách sản phẩm trong giỏ hàng sẽ được render ở đây -->
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 16px; font-weight: 700; margin-bottom: 16px;">
+      <span>Tổng tiền:</span>
+      <span id="cartTotalPrice" style="color: #ef4444;">0 đ</span>
+    </div>
+
+    <div style="display: flex; gap: 10px; justify-content: flex-end;">
+      <button class="btn btn-secondary" onclick="closeCartModal()">Tiếp tục mua hàng</button>
+      <button class="btn btn-primary" onclick="checkoutCart()">Thanh toán ngay</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,rgba(10,10,20,0.35),rgba(0,0,0,0.35)), url("https://cdn.thuviennhadat.vn//upload/hinh-anh-bai-viet/NHN/Thang-02-2025/12-02/lawnet/08-loai-hinh-thu-vien-theo-phap-luat-viet-nam.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+body::before,body::after{
+    content: "";
+    position:absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.45;
+}
+body::before{
+    background: #a97400;
+    top: 8%;
+    left: 15%;
+}
+body::after{
+    background: #ff801f;
+    bottom: 5%;
+    right: 15%;
+}
+.vao-trang{
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding: 42px 38px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 28px;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 25px 60px rgba(0,0,0, 0.35),
+    inset 0 1px 1px rgba(255,255,255,0.35);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.dang-nhap {
+    transform: rotateY(0deg);
+}
+.dang-ky {
+    transform: rotateY(180deg);
+}
+h1{
+    font-family: 'Comic San MS';
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+.subtitle{
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.input{
+    margin-bottom: 18px;
+}
+.input input{
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    outline: none;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.12);
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+.input input::placeholder{
+    color: rgba(255, 255, 255, 0.65);
+}
+.input input:focus{
+    border-color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.18);
+}
+.option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 2px 22px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+}
+.option label{
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+    color: #8b5cf6;
+}
+.submit{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.85);
+    color: #171717;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.submit:hover{
+    transform: scale(1.08);
+    background: #5fb9c9;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    color:white;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+.signup{
+    margin-top: 25px;
+    text-align: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+}
+.signup a{
+    font-weight: bold;
+}
+.thong-bao {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.truc-xoay.is-flipped {
+    transform: rotateY(180deg);
+}
+.chu-nut-xoay {
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 10px;
+}
+.nut-xoay {
+    background: none;
+    border: none;
+    color: #00f2fe;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 5px;
+    font-size: 13px;
+}
+.truc-xoay{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    margin: 0 auto;
+}
+.the-xoay {
+    width: 480px;
+    height: 560px;
+    perspective: 1000px;
+    transform-origin: center center;
+}

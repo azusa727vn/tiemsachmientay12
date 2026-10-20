@@ -1,0 +1,24 @@
+{
+  "books": [
+    {
+      "id": "tam-ly-hoc-ve-tien",
+      "title": "Tâm Lý Học Về Tiền",
+      "author": "Morgan Housel",
+      "category_id": "Tài Chính - Kỹ Năng",
+      "price": 152000,
+      "status": "available",
+      "image_url": "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?auto=format&fit=crop&q=80&w=600",
+      "detail_page": "tamlyhocvetien.html"
+    },
+    {
+      "id": "nha-gia-kim",
+      "title": "Nhà Giả Kim",
+      "author": "Paulo Coelho",
+      "category_id": "Văn Học",
+      "price": 79000,
+      "status": "available",
+      "image_url": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=400",
+      "detail_page": "#"
+    }
+  ]
+}
